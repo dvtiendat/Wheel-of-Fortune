@@ -173,7 +173,7 @@ human_players = [WOFHumanPlayer(input(
 
 num_computer = getNumberBetween("How many computer players?", 0, 10)
 
-# If there are computer players, ask how difficult they should be
+# COmputer player difficulty
 if num_computer >= 1:
     difficulty = getNumberBetween(
         "What difficulty for the computers? (1-10)", 1, 10)
