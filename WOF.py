@@ -87,9 +87,6 @@ class WOFComputerPlayer(WOFPlayer):
                 rand_letter = random.choice(CanBeGuessed)
                 return rand_letter
 
-
-# sys.setExecutionLimit(600000)  # up to 10 minutes
-
 # Repeatedly asks the user for a number between min & max (inclusive)
 
 
@@ -164,7 +161,7 @@ Guessed:  {}""".format(category, obscuredPhrase, ", ".join(sorted(guessed)))
 
 # GAME LOGIC CODE
 print("="*15)
-print("WHEEL OF PYTHON")
+print("WHEEL OF FORTUNE")
 print("="*15)
 print("")
 
@@ -242,14 +239,14 @@ while True:
     print("")
     print("{} spins...".format(player.name))
     time.sleep(2)  # pause for dramatic effect!
-    print("{}!".format(wheelPrize["Text"]))
+    print("{}!".format(wheelPrize["text"]))
     time.sleep(1)  # pause again for more dramatic effect!
 
-    if wheelPrize["Type"] == "bankrupt":
+    if wheelPrize["type"] == "bankrupt":
         player.goBankrupt()
-    elif wheelPrize["Type"] == "loseturn":
+    elif wheelPrize["type"] == "loseturn":
         pass  # do nothing; just move on to the next player
-    elif wheelPrize["Type"] == "cash":
+    elif wheelPrize["type"] == "cash":
         move = requestPlayerMove(player, category, guessed)
         if move == "EXIT":  # leave the game
             print("Until next time!")
