@@ -1,4 +1,3 @@
-
 import time
 import random
 import json
@@ -102,7 +101,7 @@ def getNumberBetween(prompt, min, max):
                 errmessage = "Must be at most {}".format(max)
             else:
                 return n
-        except ValueError:  # The user didn"T enter a number
+        except ValueError:  # The user didn't enter a number
             errmessage = "{} is not a number.".format(userinp)
 
         # If we haven"T gotten a number yet, add the error message
@@ -127,7 +126,7 @@ def spinWheel():
 
 
 def getRandomCategoryAndPhrase():
-    with open("C:\Project\Wheel of Fortune\phrases.json", "r") as f:
+    with open("phrases.json", "r") as f:
         phrases = json.loads(f.read())
         category = random.choice(list(phrases.keys()))
         phrase = random.choice(phrases[category])
@@ -204,7 +203,7 @@ winner = "No prize"
 def requestPlayerMove(player, category, guessed):
     while True:  # we"re going to keep asking the player for a move until they give a valid one
         # added so that any feedback is printed out before the next prompt
-        time.sleep(0.1)
+        time.sleep(1)
 
         move = player.getMove(
             category, obscurePhrase(phrase, guessed), guessed)
